@@ -79,3 +79,7 @@ body {
   font-weight: 600;
   font-display: swap;
 }
+
+.mask-fade-bottom {
+  mask-image: linear-gradient(to bottom, black 80%, transparent 100%);
+}
