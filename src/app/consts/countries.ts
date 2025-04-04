@@ -2,21 +2,21 @@ export const countries = [
     {
         id: 'ar',
         name: 'Argentina',
-        image: '.svg',
+        image: 'ar.webp',
     },
     {
         id: 'mx',
         name: 'México',
-        image: '.svg',
+        image: 'mx.webp',
     },
     {
         id: 'co',
         name: 'Colombia',
-        image: '.svg',
+        image: 'co.webp',
     },
     {
         id: 'es',
         name: 'España',
-        image: '.svg',
+        image: 'es.webp',
     }
 ]
