@@ -1,1 +1,19 @@
-<p>sponsors works!</p>
+<section id="sponsors" class="mx-auto py-36">
+  <h2 class="mb-8 text-4xl font-light text-center">
+    <strong>patrocinadores</strong> del evento
+  </h2>
+  <div class="animate-fade-in animate-delay-700 relative mx-auto mb-6 flex max-w-6xl flex-wrap items-center justify-center gap-2 px-4 md:gap-10">
+    @for (sponsor of firstRow; track $index) {
+      <a [href]="sponsor.url" target="_blank" class="opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-110">
+        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-5 w-auto">
+      </a>
+    }
+  </div>
+  <div class="animate-fade-in animate-delay-800 relative mx-auto mb-7 flex max-w-4xl flex-wrap items-center justify-center gap-2 px-4 md:mb-20 md:gap-10">
+    @for (sponsor of secondRow; track $index) {
+      <a [href]="sponsor.url" target="_blank"  class="opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-110">
+        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-5 w-auto">
+      </a>
+    }
+  </div>
+</section>
