@@ -3,16 +3,16 @@
     class="absolute inset-0 bg-[url('/images/footer.webp')] bg-cover bg-bottom [mask-image:linear-gradient(transparent,black_50%)]">
   </div>
 
-  <div class="relative flex h-full flex-col items-center justify-center text-[#2a1f26]">
+  <div class="relative flex h-full flex-col items-center justify-center">
     <div class="footer-content">
       <p class="text-center lowercase">{{foot}}</p>
     </div>
 
     <div class="mt-4 flex flex-row items-center justify-center gap-x-2">
       @for (social of socials; track $index){
-        <a href='{{ social.url }}' target="_blank" rel="noopener noreferrer" aria-label=''
+        <a href='{{ social.url }}' target="_blank" rel="noopener noreferrer"
         class="flex items-center justify-center transition hover:scale-125">
-        <img src="/svg/{{ social.id }}.svg" alt="">
+        <img src="/svg/{{ social.id }}.svg" alt="Logo {{ social.id }}">
       </a>
     }
     </div>
