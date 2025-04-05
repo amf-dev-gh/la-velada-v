@@ -7,8 +7,8 @@
   <div class="relative flex flex-col items-center p-8 w-full text-center">
     <div [ngClass]="showLanging ? 'absolute inset-0 flex flex-col items-center py-24 md:pt-15': 'hidden'">
       <h3 class="mt-4 leading-[100%] text-[var(--color-theme-seashell)] z-20 animate-fade-in-scale delay-300 opacity-0"><strong>26</strong> DE <br><strong>JULIO</strong></h3>
-      <figure class="relative my-20 animate-fade-in-scale delay-100 opacity-0">
-        <img src="/images/logo.png" class="w-66 md:w-55 h-auto z-20 relative" alt="La Velada del Año 5" decoding="async">
+      <figure class="relative my-7 animate-fade-in-scale delay-100 opacity-0">
+        <img src="/images/logo.png" class="w-66 md:w-55 h-auto z-20 relative" alt="La Velada del Año 5" decoding="async" fetchpriority="high">
         <div class="absolute bg-pink-400/80 blur-2xl z-10 size-64 md:size-55 top-0"></div>
       </figure>
       <h3 class="leading-[100%] text-[var(--color-theme-seashell)] mt-4 z-20 animate-fade-in-scale delay-500 opacity-0">
@@ -25,18 +25,20 @@
     </div>
   </div>
 
-  <!-- boxeadores rows -->
+  <!-- boxeadores card rows -->
    <div class="absolute flex flex-col items-center justify-end p-8 h-full w-full gap-4 z-1">
     <div class="flex justify-center w-full animate-fade-in-scale delay-700 opacity-0">
         <div class="flex gap-5 px-38">
           <app-fighter-card *ngFor="let fighter of leftFirtRow" 
           [fighter]="fighter" 
+          [ngClass]="hovered(fighter.id)"
           (mouseenter)="showFighter(fighter.id)"
           (mouseleave)="showLandig()"/>
         </div>
         <div class="flex gap-5 px-38">
           <app-fighter-card *ngFor="let fighter of rightFirtRow"
           [fighter]="fighter" 
+          [ngClass]="hovered(fighter.id)"
           (mouseenter)="showFighter(fighter.id)"
           (mouseleave)="showLandig()"/>
         </div>
@@ -44,6 +46,7 @@
     <div class="flex justify-center gap-5 w-full animate-fade-in-scale delay-900 opacity-0">
       <app-fighter-card *ngFor="let fighter of fightersSecondRow" 
       [fighter]="fighter" 
+      [ngClass]="hovered(fighter.id)"
       (mouseenter)="showFighter(fighter.id)"
       (mouseleave)="showLandig()"/>
     </div>
@@ -52,7 +55,7 @@
   <!-- boxeador container -->
    <div id="fighter-container" class="pointer-events-none absolute inset-0 flex flex-col items-center">
     <!-- imagen nombre boxeador -->
-    <div class="relative top-90 mx-auto h-20 w-full flex items-center justify-center">
+    <div class="relative top-75 mx-auto h-20 w-full flex items-center justify-center">
       <img
       *ngFor="let fighter of allFighters"
       src="/images/fighters/text/{{ fighter.id }}.webp"
@@ -63,7 +66,7 @@
       fetchpriority="low">
     </div>
     <!-- imagen boxeador -->
-    <div class="relative bottom-0 mx-auto h-[80vh] w-full flex items-center justify-center">
+    <div class="relative bottom-5 mx-auto h-[80vh] w-full flex items-center justify-center">
       <img
       *ngFor="let fighter of allFighters"
       src="/images/fighters/big/{{ fighter.id }}.webp"
@@ -74,4 +77,5 @@
       fetchpriority="low">
     </div>
    </div>
+   
 </section>
