@@ -1,14 +1,13 @@
 @import "tailwindcss";
-/* @plugin "@midudev/tailwind-animations"; */
 
 :root {
-  --color-dark-magenta: #2a1f26;
-  --font-fallback: "Adjusted Arial Fallback", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI",
-    "Noto Sans", helvetica, arial, sans-serif, "Apple Color Emoji",
-    "Segoe UI Emoji";
   --font-primary: "Anisette";
-
+  --font-fallback: "Adjusted Arial Fallback", system-ui, -apple-system, blinkmacsystemfont, "Segoe UI",
+  "Noto Sans", helvetica, arial, sans-serif, "Apple Color Emoji",
+  "Segoe UI Emoji";
+  
   /* Velada V Custom Colors */
+  --color-theme-dark-magenta: #2a1f26;
   --color-theme-french-mauve:oklch(67.65% 0.1539 329.18);
   --color-theme-raisin-black:oklch(25.53% 0.0209 340.25);
   --color-theme-tickle-me-pink:oklch(75.65% 0.143 355.9);
@@ -16,9 +15,8 @@
   --color-theme-turquoise:oklch(82.97% 0.148864 181.7442);
 }
 
-
 html {
-  font-family: "Anisette", var(--font-fallback);
+  font-family: var(--font-primary), var(--font-fallback);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
