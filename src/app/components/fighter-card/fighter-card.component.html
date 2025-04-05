@@ -1,6 +1,6 @@
 <a 
   routerLink="/peleador/{{ fighter.id }}"
-  class="mirror-card inline-block relative hover:scale-110 w-10 sm:w-14 md-w-16 lg:w-20
+  class="mirror-card inline-block relative w-10 sm:w-14 md-w-16 lg:w-20
   transition-all duration-300 border border-transparent hover:border-pink-300/50">
   
   <!-- Gradiente superior -->
@@ -11,7 +11,9 @@
     class="aspect-[900/1200] h-full w-full object-cover z-2 relative" 
     src="/images/fighters/cards/{{ fighter.id }}.webp"
     alt="Card del peleador {{ fighter.name }}" 
-    decoding="async">
+    decoding="async"
+    loading="eager"
+    fetchpriority="high">
 
   <!-- Nombre del peleador -->
   <div 
