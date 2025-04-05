@@ -1,18 +1,18 @@
-<section id="sponsors" class="mx-auto py-36">
-  <h2 class="mb-8 text-4xl font-light text-center">
+<section id="sponsors" class="mx-auto py-15 md:py-25">
+  <h2 class="mb-15 text-2xl md:text-4xl text-center">
     <strong>patrocinadores</strong> del evento
   </h2>
-  <div class="animate-fade-in animate-delay-700 relative mx-auto mb-6 flex max-w-6xl flex-wrap items-center justify-center gap-2 px-4 md:gap-10">
+  <div class="relative mx-auto mb-6 flex max-w-6xl flex-wrap items-center justify-center gap-6 px-4 md:mb-10 md:gap-12">
     @for (sponsor of firstRow; track $index) {
-      <a [href]="sponsor.url" target="_blank" class="opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-110">
-        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-5 w-auto">
+      <a [href]="sponsor.url" target="_blank" class="opacity-70 transition hover:scale-120 hover:opacity-100">
+        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-6 w-auto">
       </a>
     }
   </div>
-  <div class="animate-fade-in animate-delay-800 relative mx-auto mb-7 flex max-w-4xl flex-wrap items-center justify-center gap-2 px-4 md:mb-20 md:gap-10">
+  <div class="relative mx-auto mb-6 flex max-w-4xl flex-wrap items-center justify-center gap-7 px-4 md:mb-10 md:gap-12">
     @for (sponsor of secondRow; track $index) {
-      <a [href]="sponsor.url" target="_blank"  class="opacity-70 transition hover:scale-105 hover:opacity-100 focus:scale-110">
-        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-5 w-auto">
+      <a [href]="sponsor.url" target="_blank"  class="opacity-70 transition hover:scale-120 hover:opacity-100">
+        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-6 w-auto">
       </a>
     }
   </div>
