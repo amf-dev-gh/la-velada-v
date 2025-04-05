@@ -1,7 +1,7 @@
 <section id="hero" class="relative flex min-h-screen w-full">
-
+  <!-- background imagen hero -->
   <div class="absolute inset-0 bg-[url('/images/hero.webp')] bg-cover bg-center w-full mask-fade-bottom"></div>
-
+  <!-- landing con logo, fecha, twitch de ibai -->
   <div class="relative flex flex-col items-center p-8 w-full text-center">
     <div id="landing" class="absolute inset-0 flex flex-col items-center py-24">
       <h3 class="mt-4 leading-[100%] text-[var(--color-theme-seashell)] z-20 animate-fade-in-scale delay-300 opacity-0"><strong>26</strong> DE <br><strong>JULIO</strong></h3>
@@ -22,4 +22,12 @@
       </h3>
     </div>
   </div>
+  <!-- boxeadores hero -->
+   <div class="absolute min-h-screen w-full p-8 flex flex-col items-center justify-end">
+    <div class="flex flex-wrap justify-center gap-2">
+      @for (fighter of fightersRow1; track $index) {
+        <app-fighter-card [fighter]="fighter" />
+      }
+    </div>
+   </div>
 </section>
