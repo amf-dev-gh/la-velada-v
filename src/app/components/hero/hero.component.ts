@@ -13,11 +13,26 @@ import { CommonModule } from '@angular/common';
 })
 export class HeroComponent {
 
+  allFighters:Fighter[] = FIGHTERS;
+
   fightersFirstRow:Fighter[] = FIGHTERS.slice(0,6);
 
   leftFirtRow = this.fightersFirstRow.slice(0,3)
   rightFirtRow = this.fightersFirstRow.slice(3)
 
   fightersSecondRow:Fighter[] = FIGHTERS.slice(6);
+
+  visibleFighter:string = '';
+  showLanging:boolean = true;
+
+  showFighter(fighterId:string){
+    this.showLanging = false
+    this.visibleFighter = fighterId;
+  }
+
+  showLandig(){
+    this.showLanging = true
+    this.visibleFighter = ''
+  }
 
 }
