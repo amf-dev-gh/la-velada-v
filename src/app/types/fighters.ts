@@ -32,12 +32,12 @@ type fighterName =
   | 'Tomás'
   | 'Carlos'
 
-interface Clips {
+interface Clip {
   text: string
   url: string
 }
 
-export interface Fighters {
+export interface Fighter {
   id: fighterId
   name: fighterName
   fightName?: string
@@ -53,7 +53,7 @@ export interface Fighters {
   country: string
   versus: fighterId
   socials: Social[]
-  clips: Clips[]
+  clips: Clip[]
   workout?: {
     videoID: string
     thumbnail: string

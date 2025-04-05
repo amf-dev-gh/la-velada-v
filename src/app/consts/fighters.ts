@@ -1,6 +1,6 @@
-import type { Fighters } from '../types/fighters'
+import type { Fighter } from '../types/fighters'
 
-export const FIGHTERS: Fighters[] = [
+export const FIGHTERS: Fighter[] = [
   {
     // https://www.biografia.de/peereira/
     id: 'peereira',
