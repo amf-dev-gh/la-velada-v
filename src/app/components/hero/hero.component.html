@@ -3,18 +3,18 @@
   <div class="absolute inset-0 bg-[url('/images/hero.webp')] bg-cover bg-center w-full mask-fade-bottom"></div>
   <!-- landing con logo, fecha, twitch de ibai -->
   <div class="relative flex flex-col items-center p-8 w-full text-center">
-    <div id="landing" class="absolute inset-0 flex flex-col items-center py-24">
+    <div id="landing" class="absolute inset-0 flex flex-col items-center py-24 md:pt-15">
       <h3 class="mt-4 leading-[100%] text-[var(--color-theme-seashell)] z-20 animate-fade-in-scale delay-300 opacity-0"><strong>26</strong> DE <br><strong>JULIO</strong></h3>
       <figure class="relative my-8 animate-fade-in-scale delay-100 opacity-0">
-        <img src="/images/logo.png" class="w-64 h-auto z-20 relative" alt="La Velada del Año 5" decoding="async">
-        <div class="absolute bg-pink-400/80 blur-2xl z-10 size-64 top-0"></div>
+        <img src="/images/logo.png" class="w-66 md:w-55 h-auto z-20 relative" alt="La Velada del Año 5" decoding="async">
+        <div class="absolute bg-pink-400/80 blur-2xl z-10 size-64 md:size-55 top-0"></div>
       </figure>
       <h3 class="leading-[100%] text-[var(--color-theme-seashell)] mt-4 z-20 animate-fade-in-scale delay-500 opacity-0">
         ESTADIO<br>
         LA CARTUJA,<br>
         <strong>SEVILLA</strong>
       </h3>
-      <h3 class="leading-[100%] mt-4 animate-fade-in-scale delay-700 opacity-0">
+      <h3 class="leading-[100%] z-20 mt-4 animate-fade-in-scale delay-700 opacity-0">
         <a href="https://twitch.tv/ibai" rel="noopener noreferer" target="_blank" class="inline-block transition hover:scale-125">
           TWITCH.TV<br>
           <strong>IBAI</strong>
@@ -23,11 +23,17 @@
     </div>
   </div>
   <!-- boxeadores hero -->
-   <div class="absolute min-h-screen w-full p-8 flex flex-col items-center justify-end">
-    <div class="flex flex-wrap justify-center gap-2">
-      @for (fighter of fightersRow1; track $index) {
-        <app-fighter-card [fighter]="fighter" />
-      }
+   <div class="absolute flex flex-col items-center justify-end p-8 h-full w-full gap-4">
+    <div class="flex justify-center w-full animate-fade-in-scale delay-700 opacity-0">
+        <div class="flex gap-5 px-38">
+          <app-fighter-card *ngFor="let fighter of leftFirtRow" [fighter]="fighter" />
+        </div>
+        <div class="flex gap-5 px-38">
+          <app-fighter-card *ngFor="let fighter of rightFirtRow" [fighter]="fighter" />
+        </div>
+    </div>
+    <div class="flex justify-center gap-5 w-full animate-fade-in-scale delay-900 opacity-0">
+      <app-fighter-card *ngFor="let fighter of fightersSecondRow" [fighter]="fighter" />
     </div>
    </div>
 </section>
