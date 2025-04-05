@@ -1,0 +1,32 @@
+.mirror-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.mirror-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transform: skewX(-20deg);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.mirror-card:hover::before {
+  animation: mirror-shine 0.8s ease-in-out;
+  opacity: 1;
+}
+
+@keyframes mirror-shine {
+  0% {
+    left: -75%;
+  }
+  100% {
+    left: 125%;
+  }
+}

@@ -15,7 +15,7 @@ export class FighterCardComponent {
     name: 'Peereira',
     realName: '',
     gender: 'masculino',
-    birthDate: new Date(),
+    birthDate: new Date,
     height: 0,
     age: 0,
     weight: 0,

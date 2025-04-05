@@ -1,9 +1,22 @@
 <a 
-routerLink="/peleador/{{ fighter.id }}"
-class="inline-block transition hover:scale-110 w-10 sm:w-14 md-w-16 lg:w-20">
+  routerLink="/peleador/{{ fighter.id }}"
+  class="mirror-card inline-block relative hover:scale-110 w-10 sm:w-14 md-w-16 lg:w-20
+  transition-all duration-300 border border-transparent hover:border-pink-300/50">
+  
+  <!-- Gradiente superior -->
+  <div class="absolute w-full h-full bg-gradient-to-t from-gray-100/50 from-0% via-gray-100/10 via-75% to-transparent to-100% inset-0 z-1"></div>
+
+  <!-- Imagen -->
   <img 
-  class="aspect-[900/1200] h-full w-full object-cover" 
-  src="/images/fighters/cards/{{ fighter.id }}.webp"
-  alt="Card del peleador {{ fighter.name }}" 
-  decoding="async">
+    class="aspect-[900/1200] h-full w-full object-cover z-2 relative" 
+    src="/images/fighters/cards/{{ fighter.id }}.webp"
+    alt="Card del peleador {{ fighter.name }}" 
+    decoding="async">
+
+  <!-- Nombre del peleador -->
+  <div 
+    class="absolute inset-0 flex flex-col justify-end items-center p-1
+     bg-gradient-to-t from-pink-900/90 via-transparent to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300 z-3">
+    <h3 class="text-[var(--color-theme-tickle-me-pink)] text-sm">{{fighter.name.toLowerCase()}}</h3>
+  </div>
 </a>
