@@ -2,7 +2,7 @@
 <app-header />
 
 <!-- main del sitio -->
-<main class="min-h-screen">
+<main class="min-h-screen max-w-screen overflow-hidden">
 
   <!-- router -->
   <div [@routeAnimations]="prepareRoute(outlet)">
@@ -10,6 +10,9 @@
   </div>
 
 </main>
+
+<!-- cuenta atras -->
+<cuenta-atras />
 
 <!-- sponsors -->
 <app-sponsors />
