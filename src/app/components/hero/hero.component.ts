@@ -40,7 +40,7 @@ export class HeroComponent {
       return 'opacity-100 transition-all duration-300'
     }
     if (this.visibleFighter === fighterId || this.visibleFighter === this.oponent(fighterId)) {
-      return 'opacity-100 duration-300 scale-110 transition-all'
+      return 'opacity-100 duration-300 scale-115 transition-all'
     }
       return 'opacity-60 transition-all delay-100'
   }
