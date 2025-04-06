@@ -1,6 +1,24 @@
-<section id="luchador-details" class="relative flex min-h-screen w-full">
+<section id="fighter-details" class="relative flex min-h-screen w-full">
 
   <!-- background imagen hero -->
   <background />
+
+  <!-- opacidad al backround -->
+  <div class="absolute inset-0 bg-pink-300/50 bg-cover bg-center mask-fade-bottom w-full"></div>
+
+  <!-- informacion luchador -->
+  <div class="relative pt-15 px-15 flex justify-around w-full h-screen text-white animate-fade-in-scale delay-100">
+    <!-- imagen luchador -->
+    <div class="w-[50%] h-full p-5 flex justify-center">
+      <img 
+      src="/images/fighters/big/{{ fighter.id }}.webp" 
+      alt="Imagen de {{fighter.name}}"
+      class="h-full mask-fade-bottom transition-all hover:scale-103">
+    </div>
+    <!-- tabla luchador -->
+    <div class="w-[50%] p-5">
+      <tabla-luchador [fighter]="fighter" />
+    </div>
+  </div>
 
 </section>
