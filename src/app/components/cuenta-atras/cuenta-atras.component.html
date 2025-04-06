@@ -1,0 +1,22 @@
+<section id="sponsors" class="flex flex-col items-center justify-center mx-auto py-15 md:py-25">
+    @if (showCountDown) {
+    <h2 class="mb-5 text-2xl md:text-4xl text-center">
+        <strong>cuenta atrás para el evento...</strong>
+    </h2>
+    <div class="flex gap-3">
+        <contador [type]="'dias'" [value]="days" />
+        <contador [type]="'horas'" [value]="hours" />
+        <contador [type]="'minutos'" [value]="minutes" />
+        <contador [type]="'segundos'" [value]="seconds" />
+    </div>
+    }
+    @else {
+    <h2 class="mb-5 text-2xl md:text-3xl text-center text-[var(--color-theme-seashell)]">
+        <strong>¡EL EVENTO DE PRESENTACIÓN HA EMPEZADO!</strong>
+    </h2>
+    <a 
+    class="text-xl md:text-2xl text-center text-[var(--color-theme-seashell)] hover:scale-110 hover:underline transition"
+    href="https://twitch.tv/ibai"
+     target="_blank">TWITCH.TV/<strong>IBAI</strong></a>
+    }
+</section>
