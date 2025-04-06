@@ -38,15 +38,15 @@ interface Clip {
 }
 
 export interface Fighter {
-  id: fighterId | null
-  name: fighterName | null
+  id: fighterId
+  name: fighterName
   fightName?: string
   city?: string
   realName: string
   gender: 'masculino' | 'femenino' | 'otro'
   targetWeight?: number
   targetGloves?: string
-  birthDate: Date | null
+  birthDate: Date
   height: number
   age: number
   weight: number
