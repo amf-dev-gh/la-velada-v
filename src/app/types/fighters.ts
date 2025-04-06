@@ -38,20 +38,20 @@ interface Clip {
 }
 
 export interface Fighter {
-  id: fighterId
-  name: fighterName
+  id: fighterId | null
+  name: fighterName | null
   fightName?: string
   city?: string
   realName: string
   gender: 'masculino' | 'femenino' | 'otro'
   targetWeight?: number
   targetGloves?: string
-  birthDate: Date
+  birthDate: Date | null
   height: number
   age: number
   weight: number
   country: string
-  versus: fighterId
+  versus: fighterId | null
   socials: Social[]
   clips: Clip[]
   workout?: {
