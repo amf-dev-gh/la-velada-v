@@ -2,15 +2,17 @@
 <app-header />
 
 <!-- main del sitio -->
-<main>
+<main class="min-h-screen">
 
   <!-- router -->
-  <router-outlet />
+  <div [@routeAnimations]="prepareRoute(outlet)">
+    <router-outlet #outlet="outlet"></router-outlet>
+  </div>
 
-  <!-- sponsors -->
-  <app-sponsors />
-  
 </main>
+
+<!-- sponsors -->
+<app-sponsors />
 
 <!-- footer del sitio -->
 <app-footer />
