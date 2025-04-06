@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { RouterLink } from '@angular/router';
-import { Fighter } from '../../types/fighters';
+import { Fighter } from '../../../types/fighters';
 
 @Component({
   selector: 'app-fighter-card',
@@ -10,7 +10,7 @@ import { Fighter } from '../../types/fighters';
 })
 export class FighterCardComponent {
 
-  @Input() fighter: Fighter= {
+  @Input() fighter: Fighter = {
     id: 'peereira',
     name: 'Peereira',
     realName: '',

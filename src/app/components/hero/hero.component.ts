@@ -1,9 +1,9 @@
 import { Component } from '@angular/core';
 import { FIGHTERS } from '../../consts/fighters';
 import { Fighter } from '../../types/fighters';
-import { FighterCardComponent } from '../fighter-card/fighter-card.component';
 import { CommonModule } from '@angular/common';
 import { COMBATS } from '../../consts/combats';
+import { FighterCardComponent } from './fighter-card/fighter-card.component';
 
 @Component({
   selector: 'app-hero',
