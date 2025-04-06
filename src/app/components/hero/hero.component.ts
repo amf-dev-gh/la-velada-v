@@ -4,10 +4,11 @@ import { Fighter } from '../../types/fighters';
 import { CommonModule } from '@angular/common';
 import { COMBATS } from '../../consts/combats';
 import { FighterCardComponent } from './fighter-card/fighter-card.component';
+import { BackgroundComponent } from "../background/background.component";
 
 @Component({
   selector: 'app-hero',
-  imports: [FighterCardComponent, CommonModule],
+  imports: [FighterCardComponent, CommonModule, BackgroundComponent],
   templateUrl: './hero.component.html',
   styleUrl: './hero.component.css'
 })
