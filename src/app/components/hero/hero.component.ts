@@ -9,8 +9,7 @@ import { BackgroundComponent } from "../background/background.component";
 @Component({
   selector: 'app-hero',
   imports: [FighterCardComponent, CommonModule, BackgroundComponent],
-  templateUrl: './hero.component.html',
-  styleUrl: './hero.component.css'
+  templateUrl: './hero.component.html'
 })
 export class HeroComponent {
 
