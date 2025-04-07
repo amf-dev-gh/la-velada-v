@@ -6,10 +6,11 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { TablaLuchadorComponent } from "./tabla-luchador/tabla-luchador.component";
 import { CommonModule } from '@angular/common';
 import { FighterCardComponent } from "../hero/fighter-card/fighter-card.component";
+import { WorkoutComponent } from "./workout/workout.component";
 
 @Component({
   selector: 'app-luchador',
-  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule, FighterCardComponent],
+  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule, FighterCardComponent, WorkoutComponent],
   templateUrl: './luchador.component.html'
 })
 export class LuchadorComponent implements OnInit{
