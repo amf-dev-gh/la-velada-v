@@ -4,15 +4,15 @@
   </h2>
   <div class="relative mx-auto mb-6 flex max-w-6xl flex-wrap items-center justify-center gap-6 px-4 md:mb-10 md:gap-12">
     @for (sponsor of firstRow; track $index) {
-      <a [href]="sponsor.url" target="_blank" class="opacity-70 transition hover:scale-120 hover:opacity-100">
-        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-6 w-auto">
+      <a [href]="sponsor.url" target="_blank" class="h-[25px] opacity-70 transition hover:scale-120 hover:opacity-100">
+        <icon-svg [name]="sponsor.id" class="h-full w-auto"/>
       </a>
     }
   </div>
   <div class="relative mx-auto mb-6 flex max-w-4xl flex-wrap items-center justify-center gap-7 px-4 md:mb-10 md:gap-12">
     @for (sponsor of secondRow; track $index) {
-      <a [href]="sponsor.url" target="_blank"  class="opacity-70 transition hover:scale-120 hover:opacity-100">
-        <img src="/sponsors/{{ sponsor.image.logo }}" alt="Logo de {{ sponsor.name }}" class="h-6 w-auto">
+      <a [href]="sponsor.url" target="_blank"  class="h-[25px] opacity-70 transition hover:scale-120 hover:opacity-100">
+        <icon-svg [name]="sponsor.id" class="h-full w-auto"/>
       </a>
     }
   </div>

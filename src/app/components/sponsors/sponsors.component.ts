@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { SPONSORS } from '../../consts/sponsors';
 import { Sponsors } from '../../types/sponsors';
+import { IconComponent } from "../icon/icon.component";
 
 @Component({
   selector: 'app-sponsors',
-  imports: [],
+  imports: [IconComponent],
   templateUrl: './sponsors.component.html'
 })
 export class SponsorsComponent {
