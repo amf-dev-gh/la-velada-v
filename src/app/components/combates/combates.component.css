@@ -1,0 +1,14 @@
+.card-combat {
+  opacity: 0;
+  transform: translateY(50px);
+  animation: fade-in-up linear both;
+  animation-timeline: scroll();
+  animation-range: entry 0% entry 100%;
+}
+
+@keyframes fade-in-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
