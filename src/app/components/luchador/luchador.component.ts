@@ -2,15 +2,15 @@ import { Component, OnInit } from '@angular/core';
 import { BackgroundComponent } from "../background/background.component";
 import { FIGHTERS } from '../../consts/fighters';
 import { Fighter } from '../../types/fighters';
-import { ActivatedRoute, Router } from '@angular/router';
+import { ActivatedRoute, Router, RouterLink } from '@angular/router';
 import { TablaLuchadorComponent } from "./tabla-luchador/tabla-luchador.component";
 import { CommonModule } from '@angular/common';
+import { COMBATS } from '../../consts/combats';
 
 @Component({
   selector: 'app-luchador',
-  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule],
-  templateUrl: './luchador.component.html',
-  styleUrl: './luchador.component.css'
+  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule, RouterLink],
+  templateUrl: './luchador.component.html'
 })
 export class LuchadorComponent implements OnInit{
 
@@ -24,7 +24,7 @@ export class LuchadorComponent implements OnInit{
     age: 0,
     weight: 0,
     country: '',
-    versus: null,
+    versus: 'peereira',
     socials: [],
     clips: []
   }

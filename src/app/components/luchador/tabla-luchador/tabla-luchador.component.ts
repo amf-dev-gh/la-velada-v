@@ -3,11 +3,10 @@ import { Fighter } from '../../../types/fighters';
 import { Input } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { IconComponent } from "../../icon/icon.component";
-import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'tabla-luchador',
-  imports: [CommonModule, IconComponent, RouterLink],
+  imports: [CommonModule, IconComponent],
   templateUrl: './tabla-luchador.component.html'
 })
 export class TablaLuchadorComponent {
