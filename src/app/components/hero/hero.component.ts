@@ -5,10 +5,12 @@ import { CommonModule } from '@angular/common';
 import { COMBATS } from '../../consts/combats';
 import { FighterCardComponent } from './fighter-card/fighter-card.component';
 import { BackgroundComponent } from "../background/background.component";
+import { CuentaAtrasComponent } from "../cuenta-atras/cuenta-atras.component";
+import { PresentracionComponent } from "../presentracion/presentracion.component";
 
 @Component({
   selector: 'app-hero',
-  imports: [FighterCardComponent, CommonModule, BackgroundComponent],
+  imports: [FighterCardComponent, CommonModule, BackgroundComponent, CuentaAtrasComponent, PresentracionComponent],
   templateUrl: './hero.component.html'
 })
 export class HeroComponent {

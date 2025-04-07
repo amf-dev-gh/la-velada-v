@@ -29,14 +29,14 @@
    <div class="absolute flex flex-col items-center justify-end p-8 h-full w-full gap-4 z-1">
     <div class="flex justify-center w-full animate-fade-in-scale delay-700 opacity-0">
         <div class="flex gap-5 px-38">
-          <app-fighter-card *ngFor="let fighter of leftFirtRow" 
+          <fighter-card *ngFor="let fighter of leftFirtRow" 
           [fighter]="fighter" 
           [ngClass]="hovered(fighter.id)"
           (mouseenter)="showFighter(fighter.id)"
           (mouseleave)="showLandig()"/>
         </div>
         <div class="flex gap-5 px-38">
-          <app-fighter-card *ngFor="let fighter of rightFirtRow"
+          <fighter-card *ngFor="let fighter of rightFirtRow"
           [fighter]="fighter" 
           [ngClass]="hovered(fighter.id)"
           (mouseenter)="showFighter(fighter.id)"
@@ -44,7 +44,7 @@
         </div>
     </div>
     <div class="flex justify-center gap-5 w-full animate-fade-in-scale delay-900 opacity-0">
-      <app-fighter-card *ngFor="let fighter of fightersSecondRow" 
+      <fighter-card *ngFor="let fighter of fightersSecondRow" 
       [fighter]="fighter" 
       [ngClass]="hovered(fighter.id)"
       (mouseenter)="showFighter(fighter.id)"
@@ -79,3 +79,9 @@
    </div>
    
 </section>
+
+<!-- cuenta atras -->
+<cuenta-atras />
+
+<!-- Video presentacion -->
+<app-presentracion />
