@@ -10,8 +10,8 @@ import { IconComponent } from "../icon/icon.component";
 })
 export class SponsorsComponent {
 
-  firstRow:Sponsors[] = SPONSORS.slice(0,5)
-  secondRow:Sponsors[] = SPONSORS.slice(5)
+  firstRow:Sponsors[] = SPONSORS.slice(0,6)
+  secondRow:Sponsors[] = SPONSORS.slice(6)
 
 
 }
