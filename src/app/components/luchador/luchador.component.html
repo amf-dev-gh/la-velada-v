@@ -10,17 +10,17 @@
   <div class="relative pt-15 px-15 flex justify-center w-screen h-full text-white">
 
     <!-- frases luchador -->
-    <div class="px-5 py-10 flex flex-col items-center flex-1 justify-start gap-8">
+    <div class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
       <div class="flex flex-col gap-2">
         <h2 *ngFor="let clip of fighter.clips" class="text-2xl text-[var(--color-theme-raisin-black)]">“{{clip.text.toLowerCase()}}”</h2>
       </div>
 
-      <div class="flex justify-around items-center">
-        <img src="/images/versus.webp" alt="img versus" title="versus" class="w-20">
-        <div class="bg-gray-400/30 p-3 px-5 rounded-xl">
-          <h3>
-            <a [routerLink]="['/luchador', fighter.versus]">{{fighter.versus}}</a>
-          </h3>
+      <div class="flex justify-around items-center w-full">
+        <div>
+          <img src="/images/versus.webp" alt="img versus" title="versus" class="w-20">
+        </div>
+        <div class="bg-black/40 rounded-xl p-3 pb-2 hover:scale-110 transition">
+          <app-fighter-card [fighter]="getOponent()"/>
         </div>
       </div>
     </div>

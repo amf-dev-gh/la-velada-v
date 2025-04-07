@@ -2,14 +2,14 @@ import { Component, OnInit } from '@angular/core';
 import { BackgroundComponent } from "../background/background.component";
 import { FIGHTERS } from '../../consts/fighters';
 import { Fighter } from '../../types/fighters';
-import { ActivatedRoute, Router, RouterLink } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { TablaLuchadorComponent } from "./tabla-luchador/tabla-luchador.component";
 import { CommonModule } from '@angular/common';
-import { COMBATS } from '../../consts/combats';
+import { FighterCardComponent } from "../hero/fighter-card/fighter-card.component";
 
 @Component({
   selector: 'app-luchador',
-  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule, RouterLink],
+  imports: [BackgroundComponent, TablaLuchadorComponent, CommonModule, FighterCardComponent],
   templateUrl: './luchador.component.html'
 })
 export class LuchadorComponent implements OnInit{
@@ -60,4 +60,29 @@ export class LuchadorComponent implements OnInit{
     }
     this.router.navigate(['/not-found']);
   }
+
+  getOponent(): Fighter {
+    const oponentId = this.fighter.versus;
+    const found = FIGHTERS.find(f => f.id === oponentId);
+  
+    if (found) {
+      return found;
+    }
+    return {
+      id: 'peereira',
+      name: 'Peereira',
+      realName: '',
+      gender: 'masculino',
+      birthDate: new Date(),
+      height: 0,
+      age: 0,
+      weight: 0,
+      country: '',
+      versus: null,
+      socials: [],
+      clips: []
+    };
+  }
+  
+
 }
