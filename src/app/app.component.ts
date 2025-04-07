@@ -7,10 +7,11 @@ import {
   trigger, transition, style, animate, query, group
 } from '@angular/animations';
 import { CuentaAtrasComponent } from "./components/cuenta-atras/cuenta-atras.component";
+import { PresentracionComponent } from "./components/presentracion/presentracion.component";
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, SponsorsComponent, FooterComponent, HeaderComponent, CuentaAtrasComponent],
+  imports: [RouterOutlet, SponsorsComponent, FooterComponent, HeaderComponent, CuentaAtrasComponent, PresentracionComponent],
   animations: [
     trigger('routeAnimations', [
 
