@@ -1,19 +1,55 @@
 <header class="fixed top-0 w-full z-5 font-light">
-  <nav class="relative grid grid-cols-3 px-6 py-4 text-sm max-w-6xl mx-auto font-light">
-    <div class="hidden md:flex flex-row gap-8 justify-start">
+  <nav
+    class="relative grid grid-cols-1 lg:grid-cols-3 md:px-6 md:py-4 text-sm max-w-6xl mx-auto font-light transition-all duration-300"
+    [ngClass]="menuExpanded ? 'bg-pink-500/80':''">
+    <!-- No decido si rosa o negro -->
+    <!-- [ngClass]="menuExpanded ? 'bg-black/80':''"> -->
+    <div class="hidden lg:flex flex-row gap-8 justify-start">
       <a routerLink="/la-porra" class="inline-block hover:underline">HAZ TU PORRA</a>
       <a routerLink="/combates" class="inline-block hover:underline">VER COMBATES</a>
     </div>
-    <div class="flex justify-center">
-      <a routerLink="/" class="inline-block hover:scale-115 hover:text-[var(--color-theme-turquoise)] transition w-6">
-        <icon-svg [name]="'la-velada'"/>
+
+    <div class="relative flex justify-between  lg:justify-center text-[var(--color-theme-seashell)]">
+      
+      <!-- icono vuelta a inicio -->
+      <a routerLink="/"
+        class="inline-block z-1 hover:scale-115 hover:text-[var(--color-theme-seashell)] transition w-7 m-4 md:m-0" (click)="closeMenu()">
+        <icon-svg [name]="'la-velada'" />
       </a>
+      <div class="absolute size-8 bg-pink-400/70 blur-sm m-4 md:m-0"></div>
+
+      <!-- boton abrir menu -->
+      <div class="relative flex justify-end lg:hidden text-[var(--color-theme-seashell)] m-4 md:m-0">
+        <button id="menuButton" (click)="showMenu()"
+          class="group relative flex h-[25px] w-6 cursor-pointer flex-col items-center justify-between transition duration-300 hover:scale-110 lg:hidden"
+          aria-label="Abrir menú de navegación">
+          <span
+            class="ease h-[3px] w-8 transform bg-gray-300 transition duration-300 group-[.open]:translate-y-2 group-[.open]:rotate-45"></span>
+          <span class="ease h-[3px] w-8 transform bg-gray-300 transition duration-300 group-[.open]:opacity-0"></span>
+          <span class="ease h-[3px] w-8 transform bg-gray-300 transition duration-300 group-[.open]:opacity-0"></span>
+          <span class="ease h-[3px] w-8 transform bg-gray-300 transition duration-300 group-[.open]:-translate-y-[0.6rem] group-[.open]:-rotate-45"></span>
+        </button>
+      </div>
     </div>
-    <div class="hidden md:flex flex-row justify-end">
+
+    <!-- menu expansible -->
+    <div class="flex flex-col items-center transition-all lg:hidden" [ngClass]="menuExpanded ? 'opacity-0 animate-fade-in-down':'opacity-0 animate-fade-out-up -z-1'">
+      <a routerLink="/" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">INICIO</a>
+      <a routerLink="/la-porra" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">HAZ TU PORRA</a>
+      <a routerLink="/combates" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">VER COMBATES</a>
+      <div class="relative flex flex-col items-center" (click)="closeMenu()">
+        <span class="inline-block underline underline-offset-2 pb-8">COMPRA LAS ENTRADAS</span>
+        <span class="absolute bottom-4 text-[8px] text-amber-400">PRÓXIMANENTE</span>
+      </div>
+    </div>
+
+
+    <div class="hidden lg:flex flex-row justify-end">
       <div class="flex flex-col items-center">
         <span class="inline-block hover:underline hover:cursor-pointer">COMPRA LAS ENTRADAS</span>
         <span class="absolute top-9 text-[8px] text-amber-400">PRÓXIMANENTE</span>
       </div>
     </div>
+
   </nav>
 </header>
