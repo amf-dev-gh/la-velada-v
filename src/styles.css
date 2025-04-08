@@ -94,3 +94,7 @@ body {
 .mask-fade-top {
   mask-image: linear-gradient(to top, black 25%, transparent 100%);
 }
+
+.mask-fade-x {
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+}
