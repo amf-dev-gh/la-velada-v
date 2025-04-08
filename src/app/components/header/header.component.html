@@ -1,7 +1,7 @@
 <header class="fixed top-0 w-full z-5 font-light">
   <nav
     class="relative grid grid-cols-1 lg:grid-cols-3 md:px-6 md:py-4 text-sm max-w-6xl mx-auto font-light transition-all duration-300"
-    [ngClass]="menuExpanded ? 'bg-pink-500/80':''">
+    [ngClass]="menuExpanded ? 'bg-pink-500/80 lg:bg-transparent':''">
     <!-- No decido si rosa o negro -->
     <!-- [ngClass]="menuExpanded ? 'bg-black/80':''"> -->
     <div class="hidden lg:flex flex-row gap-8 justify-start">
@@ -33,7 +33,7 @@
     </div>
 
     <!-- menu expansible -->
-    <div class="flex flex-col items-center transition-all lg:hidden" [ngClass]="menuExpanded ? 'opacity-0 animate-fade-in-down':'opacity-0 animate-fade-out-up -z-1'">
+    <div class="flex flex-col items-center transition-all z-30 lg:hidden" [ngClass]="menuExpanded ? 'opacity-0 animate-fade-in-down':'opacity-0 animate-fade-out-up hidden'">
       <a routerLink="/" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">INICIO</a>
       <a routerLink="/la-porra" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">HAZ TU PORRA</a>
       <a routerLink="/combates" class="inline-block underline underline-offset-2 pb-8" (click)="closeMenu()">VER COMBATES</a>
