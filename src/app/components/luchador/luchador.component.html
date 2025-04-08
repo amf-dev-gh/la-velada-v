@@ -1,42 +1,45 @@
-<section id="fighter-details" class="relative flex h-screen w-full">
+<section id="fighter-details" class="relative flex min-h-screen w-full">
 
   <!-- background imagen hero -->
   <background />
 
   <!-- opacidad al backround -->
-  <div class="absolute inset-0 bg-pink-300/50 bg-cover bg-center mask-fade-bottom w-full"></div>
+  <div class="absolute inset-0 bg-pink-300/40 bg-cover bg-center mask-fade-bottom w-full"></div>
 
   <!-- informacion luchador -->
-  <div class="relative pt-15 px-15 flex justify-center w-screen h-full text-white">
+  <div class="relative pt-15 sm:px-15 flex flex-col justify-center items-center w-screen h-full text-white">
+
+    <!-- imagen luchador -->
+    <div class="relative max-h-full">
+      <img src="/images/fighters/big/{{ fighter.id }}.webp" alt="Imagen de {{fighter.name}}"
+        class="h-screen w-auto max-w-none mask-fade-bottom transition-all hover:scale-103">
+      <img src="/images/fighters/text/{{fighter.id}}.webp" alt="Imagen texto {{fighter.name}}" title="{{fighter.name}}"
+        class="absolute bottom-70 left-1/2 -translate-x-1/2 w-screen min-h-10 max-w-none">
+    </div>
+
+    <!-- tabla luchador -->
+    <div class="flex flex-col items-center flex-1 justify-start">
+      <tabla-luchador [fighter]="fighter" class="w-full" />
+    </div>
 
     <!-- frases luchador -->
-    <div class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
+    <div *ngIf="fighter.clips.length !== 0" class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
       <div class="flex flex-col gap-2">
-        <h2 *ngFor="let clip of fighter.clips" class="text-2xl text-[var(--color-theme-raisin-black)]">“{{clip.text.toLowerCase()}}”</h2>
+        <hr>
+        <h2 *ngFor="let clip of fighter.clips" class="sm:text-2xl text-[var(--color-theme-raisin-black)] italic text-center">
+          “{{clip.text.toLowerCase()}}”</h2>
+          <hr>
       </div>
+    </div>
 
+    <!-- VERSUS -->
+    <div class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
       <div class="flex justify-around items-center w-full">
         <div>
           <img src="/images/versus.webp" alt="img versus" title="versus" class="w-20">
         </div>
-        <div class="bg-black/40 rounded-xl p-3 pb-2 hover:scale-110 transition">
-          <app-fighter-card [fighter]="getOponent()"/>
-        </div>
+        <app-fighter-card [fighter]="getOponent()" />
       </div>
-    </div>
-
-    <!-- imagen luchador -->
-    <div class="relative p-5 justify-center items-center max-h-full overflow-visible">
-      <img src="/images/fighters/big/{{ fighter.id }}.webp" alt="Imagen de {{fighter.name}}"
-        class="h-[95%] w-auto mask-fade-bottom transition-all hover:scale-103">
-    
-      <img src="/images/fighters/text/{{fighter.id}}.webp" alt="Imagen texto {{fighter.name}}" title="{{fighter.name}}"
-      class="absolute bottom-30 left-1/2 -translate-x-1/2 w-[120%] max-w-none">
-    </div>
-
-    <!-- tabla luchador -->
-    <div class="p-5 flex flex-col items-center flex-1 justify-start">
-      <tabla-luchador [fighter]="fighter" class="w-full" />
     </div>
 
   </div>
