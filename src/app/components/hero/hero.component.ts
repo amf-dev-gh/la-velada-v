@@ -7,11 +7,13 @@ import { FighterCardComponent } from './fighter-card/fighter-card.component';
 import { BackgroundComponent } from "../background/background.component";
 import { CuentaAtrasComponent } from "../cuenta-atras/cuenta-atras.component";
 import { PresentracionComponent } from "../presentracion/presentracion.component";
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-hero',
-  imports: [FighterCardComponent, CommonModule, BackgroundComponent, CuentaAtrasComponent, PresentracionComponent],
-  templateUrl: './hero.component.html'
+  imports: [FighterCardComponent, CommonModule, BackgroundComponent, CuentaAtrasComponent, PresentracionComponent, RouterLink],
+  templateUrl: './hero.component.html',
+  styleUrl: './hero.component.css'
 })
 export class HeroComponent {
 

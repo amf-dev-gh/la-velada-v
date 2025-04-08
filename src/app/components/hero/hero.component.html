@@ -6,18 +6,24 @@
   <!-- landing con logo, fecha, twitch de ibai -->
   <div class="relative flex flex-col items-center p-8 w-full text-center">
     <div [ngClass]="showLanging ? 'absolute inset-0 flex flex-col items-center py-24 md:pt-15': 'hidden'">
-      <h3 class="mt-4 leading-[100%] text-[var(--color-theme-seashell)] z-2 animate-fade-in animate-delay-300 opacity-0"><strong>26</strong> DE <br><strong>JULIO</strong></h3>
+      <h3
+        class="mt-0 sm:mt-4 leading-[100%] text-[var(--color-theme-seashell)] z-2 animate-fade-in animate-delay-300 opacity-0">
+        <strong>26</strong> DE <br><strong>JULIO</strong>
+      </h3>
       <figure class="relative my-7 animate-fade-in opacity-0">
-        <img src="/images/logo.png" class="w-66 md:w-55 h-auto z-2 relative" alt="La Velada del Año 5" decoding="async" fetchpriority="high">
+        <img src="/images/logo.png" class="w-66 md:w-55 h-auto z-2 relative" alt="La Velada del Año 5" decoding="async"
+          fetchpriority="high">
         <div class="absolute bg-pink-400/80 blur-2xl z-1 size-64 md:size-55 top-0"></div>
       </figure>
-      <h3 class="leading-[100%] text-[var(--color-theme-seashell)] mt-4 z-2 animate-fade-in animate-delay-500 opacity-0">
+      <h3
+        class="leading-[100%] text-[var(--color-theme-seashell)] sm:mt-4 z-2 animate-fade-in animate-delay-500 opacity-0">
         ESTADIO<br>
         LA CARTUJA,<br>
         <strong>SEVILLA</strong>
       </h3>
-      <h3 class="leading-[100%] z-20 mt-4 animate-fade-in animate-delay-700 opacity-0">
-        <a href="https://twitch.tv/ibai" rel="noopener noreferer" target="_blank" class="inline-block transition hover:scale-125">
+      <h3 class="leading-[100%] z-2 mt-4 animate-fade-in animate-delay-700 opacity-0">
+        <a href="https://twitch.tv/ibai" rel="noopener noreferer" target="_blank"
+          class="inline-block transition hover:scale-125">
           TWITCH.TV<br>
           <strong>IBAI</strong>
         </a>
@@ -26,58 +32,64 @@
   </div>
 
   <!-- boxeadores card rows -->
-   <div class="absolute flex flex-col items-center justify-end p-8 h-full w-full gap-4 z-1">
-    <div class="flex justify-between w-full animate-fade-in animate-delay-700 opacity-0">
-        <div class="flex gap-5 me-auto">
-          <app-fighter-card *ngFor="let fighter of leftFirtRow" 
-          [fighter]="fighter" 
-          [ngClass]="hovered(fighter.id)"
-          (mouseenter)="showFighter(fighter.id)"
-          (mouseleave)="showLandig()"/>
-        </div>
-        <div class="flex gap-5 ms-auto ">
-          <app-fighter-card *ngFor="let fighter of rightFirtRow"
-          [fighter]="fighter" 
-          [ngClass]="hovered(fighter.id)"
-          (mouseenter)="showFighter(fighter.id)"
-          (mouseleave)="showLandig()"/>
-        </div>
+  <div class="absolute flex flex-col items-center justify-end p-8 h-full w-full gap-4 z-1">
+
+    <!-- cards boxeadores fila 1 -->
+    <div class="hidden sm:flex justify-between w-full max-w-5xl animate-fade-in animate-delay-700 opacity-0">
+      <div class="flex gap-5 me-auto">
+        <app-fighter-card *ngFor="let fighter of leftFirtRow" [fighter]="fighter" [ngClass]="hovered(fighter.id)"
+          (mouseenter)="showFighter(fighter.id)" (mouseleave)="showLandig()" />
+      </div>
+      <div class="flex gap-5 ms-auto">
+        <app-fighter-card *ngFor="let fighter of rightFirtRow" [fighter]="fighter" [ngClass]="hovered(fighter.id)"
+          (mouseenter)="showFighter(fighter.id)" (mouseleave)="showLandig()" />
+      </div>
     </div>
-    <div class="flex justify-center gap-5 w-full animate-fade-in animate-delay-900 opacity-0">
-      <app-fighter-card *ngFor="let fighter of fightersSecondRow" 
-      [fighter]="fighter" 
-      [ngClass]="hovered(fighter.id)"
-      (mouseenter)="showFighter(fighter.id)"
-      (mouseleave)="showLandig()"/>
+
+    <!-- cards boxeadores fila 2 -->
+    <div class="hidden sm:flex justify-center gap-5 w-full animate-fade-in animate-delay-900 opacity-0">
+      <app-fighter-card *ngFor="let fighter of fightersSecondRow" [fighter]="fighter" [ngClass]="hovered(fighter.id)"
+        (mouseenter)="showFighter(fighter.id)" (mouseleave)="showLandig()" />
     </div>
-   </div>
+
+    <!-- cards boxeadores móvil -->
+    <div class="flex flex-nowrap overflow-x-auto gap-5 w-full sm:hidden carousel-container mask-fade-x animate-fade-in-up animate-delay-700">
+      <div class="relative shrink-0 p-2 w-{80%]}">
+        <div class="w-2"></div>
+      </div>
+      <a *ngFor="let fighter of allFighters" routerLink="/luchador/{{ fighter.id }}"
+        class="relative shrink-0 p-2 min-w-[40%] snap-center">
+        <div class="absolute bg-fuchsia-100/50 w-full h-full inset-0 mask-fade-top blur-xl"></div>
+        <img src="/images/fighters/big/{{ fighter.id }}.webp" alt="Foto del boxeador {{ fighter.name }}"
+          class="h-55 w-auto object-contain mask-fade-bottom mx-auto" />
+        <img src="/images/fighters/text/{{ fighter.id }}.webp" alt="Nombre del boxeador {{ fighter.name }}"
+          class="absolute bottom-15 left-1/2 -translate-x-1/2 w-[120%]">
+      </a>
+      <div class="relative shrink-0 p-2 w-{80%]}">
+        <div class="w-12"></div>
+      </div>
+    </div>
+
+  </div>
 
   <!-- boxeador container -->
-   <div id="fighter-container" class="pointer-events-none absolute inset-0 flex flex-col items-center">
+  <div id="fighter-container" class="pointer-events-none absolute inset-0 flex flex-col items-center">
     <!-- imagen nombre boxeador -->
     <div class="relative top-75 mx-auto h-20 w-full flex items-center justify-center">
-      <img
-      *ngFor="let fighter of allFighters"
-      src="/images/fighters/text/{{ fighter.id }}.webp"
-      alt="Imagen {{ fighter.name }}"
-      loading="lazy"
-      decoding="async"
-      [ngClass]="visibleFighter === fighter.id ? 'w-auto h-full absolute z-1 animate-fade-in animate-delay-200 opacity-0':'hidden'"
-      fetchpriority="low">
+      <img *ngFor="let fighter of allFighters" src="/images/fighters/text/{{ fighter.id }}.webp"
+        alt="Imagen {{ fighter.name }}" loading="lazy" decoding="async"
+        [ngClass]="visibleFighter === fighter.id ? 'w-auto h-full absolute z-1 animate-fade-in animate-delay-200 opacity-0':'hidden'"
+        fetchpriority="low">
     </div>
     <!-- imagen boxeador -->
     <div class="relative bottom-5 mx-auto h-[80vh] w-full flex items-center justify-center">
-      <img
-      *ngFor="let fighter of allFighters"
-      src="/images/fighters/big/{{ fighter.id }}.webp"
-      alt="Imagen {{ fighter.name }}"
-      loading="lazy"
-      decoding="async"
-      [ngClass]="visibleFighter === fighter.id ? 'w-auto h-full absolute mask-fade-bottom animate-fade-in animate-delay-100 opacity-0':'hidden'"
-      fetchpriority="low">
+      <img *ngFor="let fighter of allFighters" src="/images/fighters/big/{{ fighter.id }}.webp"
+        alt="Imagen {{ fighter.name }}" loading="lazy" decoding="async"
+        [ngClass]="visibleFighter === fighter.id ? 'w-auto h-full absolute mask-fade-bottom animate-fade-in animate-delay-100 opacity-0':'hidden'"
+        fetchpriority="low">
     </div>
-   </div>
-   
+  </div>
+
 </section>
 
 <!-- cuenta atras -->

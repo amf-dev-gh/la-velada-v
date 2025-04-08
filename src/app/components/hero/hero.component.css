@@ -1,0 +1,10 @@
+.carousel-container {
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+}
+
+.carousel-container::-webkit-scrollbar {
+  display: none; /* Chrome/Safari/Opera */
+}
