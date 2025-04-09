@@ -53,17 +53,17 @@
     </div>
 
     <!-- cards boxeadores móvil -->
-    <div class="flex flex-nowrap overflow-x-auto gap-5 w-full sm:hidden carousel-container mask-fade-x animate-fade-in-up animate-delay-700">
+    <div class="flex flex-nowrap overflow-x-auto gap-5 w-full sm:hidden carousel-container mask-fade-x animate-fade-in-down animate-delay-700">
       <div class="relative shrink-0 p-2 w-{80%]}">
         <div class="w-2"></div>
       </div>
       <a *ngFor="let fighter of allFighters" routerLink="/luchador/{{ fighter.id }}"
         class="relative shrink-0 p-2 min-w-[40%] snap-center">
-        <div class="absolute bg-fuchsia-100/50 w-full h-full inset-0 mask-fade-top blur-xl"></div>
+        <div class="absolute bg-fuchsia-100/50 border-4 border-fuchsia-300 w-full h-full inset-0 mask-fade-top blur-md rounded-b-lg"></div>
         <img src="/images/fighters/big/{{ fighter.id }}.webp" alt="Foto del boxeador {{ fighter.name }}"
           class="h-55 w-auto object-contain mask-fade-bottom mx-auto" />
         <img src="/images/fighters/text/{{ fighter.id }}.webp" alt="Nombre del boxeador {{ fighter.name }}"
-          class="absolute bottom-15 left-1/2 -translate-x-1/2 w-[120%]">
+          class="absolute bottom-15 left-1/2 -translate-x-1/2 w-[130%] h-6">
       </a>
       <div class="relative shrink-0 p-2 w-{80%]}">
         <div class="w-12"></div>
