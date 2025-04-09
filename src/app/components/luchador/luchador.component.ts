@@ -33,19 +33,12 @@ export class LuchadorComponent implements OnInit{
   constructor(private route: ActivatedRoute, private router: Router) {}
 
   ngOnInit(): void {
-    // Cargar el luchador inicialmente con el id
-    this.getFighterid();
-
-    // Detectar cambios en los parámetros de la URL
     this.route.paramMap.subscribe(params => {
       const fighterId = params.get('id');
-      this.getFighter(fighterId);
+      if (fighterId) {
+        this.getFighter(fighterId);
+      }
     });
-  }
-
-  private getFighterid() {
-    const fighterId = this.route.snapshot.paramMap.get('id');
-    this.getFighter(fighterId);
   }
 
   private getFighter(fighterId: string | null) {
