@@ -1,4 +1,4 @@
-<section id="fighter-details" class="relative flex min-h-screen w-full">
+<section class="relative flex min-h-screen w-full">
 
   <!-- background imagen hero -->
   <background />
@@ -7,44 +7,49 @@
   <div class="absolute inset-0 bg-pink-300/40 bg-cover bg-center mask-fade-bottom w-full"></div>
 
   <!-- informacion luchador -->
-  <div class="relative pt-15 sm:px-15 flex flex-col justify-center items-center w-screen h-full text-white">
+  <div id="fighter-details" class="relative pt-15 sm:px-15 flex flex-col justify-center lg:flex-row lg:justify-around items-center w-full h-full text-white">
 
     <!-- imagen luchador -->
-    <div class="relative max-h-full">
+    <div class="relative max-h-full animate-fade-in-up  md:animate-fade-in-left animate-delay-100">
       <img src="/images/fighters/big/{{ fighter.id }}.webp" alt="Imagen de {{fighter.name}}"
         class="h-screen w-auto max-w-none mask-fade-bottom transition-all hover:scale-103">
       <img src="/images/fighters/text/{{fighter.id}}.webp" alt="Imagen texto {{fighter.name}}" title="{{fighter.name}}"
-        class="absolute bottom-70 left-1/2 -translate-x-1/2 w-screen min-h-10 max-w-none">
+        class="absolute bottom-70 left-1/2 -translate-x-1/2 w-screen sm:w-150 min-h-10 max-w-none">
     </div>
 
-    <!-- tabla luchador -->
-    <div class="flex flex-col items-center flex-1 justify-start">
-      <tabla-luchador [fighter]="fighter" class="w-full" />
-    </div>
+    <div class="flex flex-col">
 
-    <!-- frases luchador -->
-    <div *ngIf="fighter.clips.length !== 0" class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
-      <div class="flex flex-col gap-2">
-        <hr>
-        <h2 *ngFor="let clip of fighter.clips" class="sm:text-2xl text-[var(--color-theme-raisin-black)] italic text-center">
-          “{{clip.text.toLowerCase()}}”</h2>
-          <hr>
+      <!-- tabla luchador -->
+      <div class="flex flex-col items-center flex-1 justify-start w-screen md:w-120 p-3">
+        <tabla-luchador [fighter]="fighter" class="w-full" />
       </div>
-    </div>
 
-    <!-- VERSUS -->
-    <div class="px-5 py-10 flex flex-col items-center flex-1 justify-center gap-8">
-      <div class="flex justify-around items-center w-full">
-        <div>
-          <img src="/images/versus.webp" alt="img versus" title="versus" class="w-20">
+      <!-- VERSUS -->
+      <div class="p-3 sm:px-5 sm:py-10 flex flex-col items-center flex-1 justify-center gap-8 w-full h-10 animate-fade-in-up animate-delay-900">
+        <div class="flex justify-around items-center w-full">
+          <div>
+            <img src="/images/versus.webp" alt="img versus" title="versus" class="w-25">
+          </div>
+          <app-fighter-card [fighter]="getOponent()" />
         </div>
-        <app-fighter-card [fighter]="getOponent()" />
       </div>
+
     </div>
 
+    
   </div>
-
+  
 </section>
+
+<!-- frases luchador -->
+<div *ngIf="fighter.clips.length !== 0"
+  class="px-3 py-5 flex flex-col items-center justify-between gap-8 text-[var(--color-theme-raisin-black)]">
+  <h2 class="text-2xl md:text-4xl"><strong>decaraciones</strong></h2>
+  <div class="flex flex-col items-center justify-between md:grid md:grid-cols-3 md:px-8 gap-8">
+    <h3 *ngFor="let clip of fighter.clips" class="sm:text-2xl italic text-center md:border-l-3 md:my-auto md:min-h-50">
+      “{{clip.text.toLowerCase()}}”</h3>
+  </div>
+</div>
 
 <!-- seccion video workout -->
 <workout-video *ngIf="fighter.workout" [videoId]="fighter.workout.videoID" />
